@@ -1,0 +1,73 @@
+nav.NavigationHeader
+{
+	background: black;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
+a.NavigationHeaderItem
+{
+	background: black;
+	text-align: center;
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 15px 15px;
+	float: left;
+}
+
+a.NavigationHeaderItem:hover
+{
+	background: blue;
+}
+
+section.MainContainer
+{
+	width: 80%;
+}
+
+table.LastInsertedAnnouncementsTable
+{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-radius: 5px;
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid black;
+	overflow: hidden;
+}
+
+td.LastInsertedAnnouncementsTableData, th.LastInsertedAnnouncementsTableHeader
+{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 5px;
+	overflow: hidden;
+	height: 20px;
+}
+
+th.LastInsertedAnnouncementsTableHeader
+{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: blue;
+	color: white;
+}
+
+tr.LastInsertedAnnouncementsTableRow:nth-child(even)
+{
+	background-color: #f2f2f2
+}
+
+tr.LastInsertedAnnouncementsTableRow:hover
+{
+	background-color: #ddd;
+}
+
+.Centered
+{
+	margin-left: auto;
+	margin-right: auto;
+}
