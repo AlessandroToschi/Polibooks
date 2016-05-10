@@ -1,0 +1,33 @@
+<form class="sell-form" role="form" action="{ACTION}" method="POST">
+    <div class="form-group has-feedback" id="isbng">
+        <label class="control-label" for="isbn">Inserisci l'ISBN</label>
+        <input id="isbn" class="numbersOnly form-control" type="text" name="isbn" maxlength="13" required autofocus>
+        <span id="isbnc" class="glyphicon form-control-feedback"></span>
+    </div>
+    <div class="selldiv"></div>
+   
+    <div class="form-group has-feedback" id="priceg">
+        <label class="control-label" for="price">Inserisci il prezzo (&euro;)</label>
+        <input id="price" class="numComaOnly form-control" type="text" name="price" maxlength="6" required/>
+        <span id="pricec" class="glyphicon form-control-feedback"></span>
+    </div>
+
+    <div class="form-group has-feedback" id="qualityg">
+        <label class="control-label" for="quality">Com'è messo il libro?</label>
+        <select id="quality" name="quality" class="form-control" required>{QUALITY}</select>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="control-label" for="note">Facoltativo: Inserisci una nota</label>
+        <textarea id="note" name="note" type="text" class="form-control" maxlength="300"></textarea>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" id="contsell" type="submit" disabled>{LANG_SUBMIT}</button>
+</table>
+
+<input type="hidden" name="add" value="" />
+</form>
+</div>
+<div id="divLoadingBar" style="display: none;">
+	<b>Loading..</b><br />
+	<img src="/img/loading1.gif" />
+</div>

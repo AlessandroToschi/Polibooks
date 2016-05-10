@@ -1,0 +1,116 @@
+body {
+	margin: 0px;
+	padding-top: 70px;
+    background-color: #eee;
+}
+
+.sell-form {
+    max-width: 350px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.copybar{
+	border-top: 1px solid #ccc;
+	background: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#copytable{
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 700px;
+	width: 100%;
+	height: 20px;
+}
+#copytable td{
+	width: 20%;
+	text-align: center;
+	font-size: 11px;
+	color: #aaa;
+	font-style: italic;
+}
+
+#blackbg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 100; 
+	display: none;
+}
+.topmsg {
+	left:50%;
+	top:0;
+	position:fixed;
+	_position: absolute;
+	text-align: center;
+	color: #090;
+	font-weight: bold;
+	z-index:101;
+}
+
+#msgpop {
+	background-color: #fff;
+	border: 3px solid #fff;
+	border-radius: 5px;
+	cursor: default;
+	display:none;
+	margin-left: -200px;
+
+	left: 50%;
+	top: 20%;
+
+	position: fixed;
+	_position:absolute;
+	text-align: left;
+
+	width: 400px;
+
+	z-index:101;
+}
+
+#msgcont {
+	border:1px solid #000;
+	border-width: 1px 1px 1px 1px;
+}
+
+#msgtit {
+	font-size: 14px;
+	width: 394px;
+	height: 24px;
+	margin: 0px;
+	padding-top: 5px;
+	padding-left: 5px;
+	color: #fff;
+	text-align: center;
+	background: #000 repeat-x top left;
+}
+
+#msgtext {
+	font-size: 10px;
+	font-color: #333;
+	width: 388px;
+	word-wrap: break-word;
+	padding: 5px;
+	min-height: 100px;
+}
+
+#btnflt {
+	margin: 8px;
+	float: right;
+}
+#msgbut {
+	font-size: 14px;
+	width: 398px;
+	height: 40px;
+	background: rgb(201,209,220);
+	color: #fff;
+}

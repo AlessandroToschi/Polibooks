@@ -1,0 +1,1 @@
+[02-Mar-2015 11:46:28 Europe/Rome] PHP Warning:  mysql_connect(): Host 'srv-hp12.netsons.net' is not allowed to connect to this MySQL server in /home/suknotcs/public_html/includes/database.class.php on line 8

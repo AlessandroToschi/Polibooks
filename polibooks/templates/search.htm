@@ -1,0 +1,15 @@
+<div style="max-width: 500px; margin: 0 auto;" class="form-group form-group-lg" align="center">
+    <label for="searchbox" class="control-label">{LANG_SEARCHBOX}</label>
+    <input class="form-control" type="text" id="searchbox"/>
+	<span id="searchbutton"></span>
+</div>
+<script>window.onload=function(){loadSearch();}</script>
+<br /><br />
+<div class="panel panel-primary" id="colvisib" style="display: none;">
+    <div class="panel-heading">Risultati ricerca</div>
+    <div class="panel-body">
+        <div align="center" id="divSearch" style="display: hidden;"></div>
+        <div id="loadingAnim" style="width: 100%; text-align: center; display: none;"><img src="/img/loading2.gif" /></div>
+    </div>
+</div>
+<div id="showbook"></div>

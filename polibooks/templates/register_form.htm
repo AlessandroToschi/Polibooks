@@ -1,0 +1,23 @@
+<div align="center" style="font-size: 12px; text-align: center;">
+Ciao {NAME}, sei quasi registrato!<br /><br />
+Manca solo qualche domandina:<br /><br />
+<div class="joindiv">
+	<form action="{ACTION}" method="POST">
+			<font color="#ff0000"><b>&nbsp;{ERROR}&nbsp;</b></font><br /><br />
+	<table class="registertable">
+		<tr><td style="font-size:16px">Quali sedi puoi raggiungere?</td></tr>
+		<tr><td>{CAMPUS_OPTIONS}</td></tr>
+	</table><br /><br />
+	<table class="registertable">
+		<tr><td colspan="3" style="font-size:16px">Quali contatti rendi disponibili?</td></tr>
+		<tr><td><input type="checkbox" name="use_email" value="true" /></td><td>{LANG_EMAIL}</td><td width="100%"><input style="width: 100%" type="text" name="email" value="{FB_EMAIL}" /></td></tr>
+		<tr><td><input type="checkbox" name="use_phone" value="true" /></td><td>{LANG_PHONE}</td><td width="100%"><input style="width: 100%" type="text" name="phone" value="" /></td></tr>
+		<tr><td><input type="checkbox" name="use_fb" value="true" /></td><td colspan="2">{LANG_FBPROFILE}</td>
+	</table><br />
+		<div align="center"><input type="checkbox" name="contract" value="true" />Ho letto e accetto le condizioni di utilizzo<br />
+		<input type="submit" value="{LANG_SUBIMIT}" /></div>
+
+	<input type="hidden" name="data" value="ok" />
+	</form>
+</div>
+</div>
