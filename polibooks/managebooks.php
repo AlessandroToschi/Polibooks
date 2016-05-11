@@ -73,6 +73,7 @@ show();
 function createButtons($id)
 {
 		return 	'<a href="?mode=delete&id='.$id.'"><button class="btn btn-danger btn-block">Elimina</button></a><br>'.
+				'<button onclick="updatePriceForm('.$id.');" class="btn btn-primary btn-block">Modifica prezzo</button><br>'.
 				'<a href="?mode=sold&id='.$id.'"><button class="btn btn-primary btn-block">Segna come venduto</button></a><br>';
 }
 
@@ -106,7 +107,7 @@ function show()
 		$main = $template->setVariables($main, array("ROWS"=>$rows));
 	}
 	else
-		$main = '<span class="lead">Non hai ancora venduto nessun libro!</span><br>Clicca <a href="/sell.php">qua</a> per venderne uno.<br>';
+		$main = '<span class="lead">Non hai ancora venduto nessun libro!</span><br>Clicca <a href="/polibooks/sell.php">qua</a> per venderne uno.<br>';
 	echo $template->getSite(THEME_SINGLE, "Gestisci libri", $main);
 }
 

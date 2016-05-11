@@ -13,8 +13,14 @@ class User
 		$fbid = $db->escape($fbid);
 		#$q = $db->query("SELECT * FROM users WHERE fb_id=$fbid");
 		$q = $db->query("SELECT * FROM users WHERE name='$name' AND surname='$surname'");
+		$r = $db->fetch($q);
+		if($r['fb_id'] != $fbid)
+		{
+			$db->query("UPDATE users SET fb_id=$fbid  WHERE name='$name' AND surname='$surname';");
+		}
+		
 		if($db->rows($q)>0)
-			return $db->fetch($q);
+			return $r;
 		return false;
 	}
 
@@ -50,6 +56,10 @@ __HTML__;
 		else
 			$this->userAuthed = false;
 	}
+	
+	public static function changeFB_ID($new_fb_id, $name, $surname)
+	{
+			}
 
 	public function getRawData($field)
 	{
@@ -218,6 +228,8 @@ __HTML__;
 		$r = $db->fetch($q);
 		$this->attach($r);
 	}
+	
+	
 }
 
 ?>

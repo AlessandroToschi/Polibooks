@@ -45,7 +45,7 @@ function checkISBN()
 		if(lastIsbn!=isbn)
 		{
 			$(".selldiv").html( $("#divLoadingBar").html() );
-			$.get("polibooks/ajax/bookinfo.php", {"isbn":isbn}, function(data){
+			$.get("/polibooks/ajax/bookinfo.php", {"isbn":isbn}, function(data){
 				$(".selldiv").html(data);
 			});
 			lastIsbn=isbn;
@@ -153,4 +153,22 @@ function insertAtCaret(element, text) {
         element.value += text;
         element.focus();
     }
+}
+
+function updatePriceForm(bookID) 
+{
+	var table = document.getElementById("manageBooksTable");
+	
+	if(table == undefined)
+	{
+		console.log("Impossibile trovare la tabella della gestione libri.");
+	}
+	
+	var priceCell = table.rows[1].cells[4];
+	console.log(priceCell.innerHTML);
+	
+	var newInput = document.createElement('input');
+	newInput.setAttribute("value",priceCell.innerHTML.replace("€ ",""))
+	priceCell.parentNode.insertBefore(newInput, priceCell);
+	priceCell.parentNode.removeChild(priceCell);
 }
