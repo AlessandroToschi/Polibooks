@@ -3,6 +3,9 @@ require_once("common.php");
 global $user;
 if(!checkPermissions(USER_AUTHED))
 	redirect("index.php");
+	
+$showUpdatePriceForm = false;
+$updatePriceBookId = 0;
 
 if(isset($_POST['yes']))
 {
@@ -60,6 +63,11 @@ else
 				request("book$id", "Sei sicuro di voler cancellare il libro?", 
 						array(	"mode" => "delete", "id" => $id)); 
 				break;
+			case "showUpdatePriceForm":
+				$showUpdatePriceForm = true;
+				$updatePriceBookId = $id;
+				request("book$id", "Sei sicuro di voler marcare il libro come \"venduto\"?\nIn questo modo sar&agrave; come cancellato, ma se qualcuno si fosse salvato il link, risulter&agrave; venduto!", array("mode"=>"sold", "id"=>$id));
+				break;
 			case "sold":
 					request("book$id", "Sei sicuro di voler marcare il libro come \"venduto\"?\nIn questo modo sar&agrave; come cancellato, ma se qualcuno si fosse salvato il link, risulter&agrave; venduto!", array("mode"=>"sold", "id"=>$id));
 				break;
@@ -67,13 +75,26 @@ else
 		}
 	}
 }
-
+#input type="text" pattern="\d+(\.\d{2})?
 show();
 
 function createButtons($id)
 {
+	#onclick="updatePriceForm('.$id.');"
+	$buttonUpdatePrice = "";
+	
+	if($showUpdatePriceForm == true)
+	{
+		$buttonUpdatePrice = "<input type='submit' value='Applica modifica'>";
+		echo $buttonUpdatePrice;
+	}
+	else
+	{
+		$buttonUpdatePrice = '<a href="?mode=showUpdatePriceForm&id='.$id.'"<button class="btn btn-primary btn-block">Modifica prezzo</button></a>';
+	}
+	
 		return 	'<a href="?mode=delete&id='.$id.'"><button class="btn btn-danger btn-block">Elimina</button></a><br>'.
-				'<button onclick="updatePriceForm('.$id.');" class="btn btn-primary btn-block">Modifica prezzo</button><br>'.
+				$buttonUpdatePrice.'<br>'.
 				'<a href="?mode=sold&id='.$id.'"><button class="btn btn-primary btn-block">Segna come venduto</button></a><br>';
 }
 

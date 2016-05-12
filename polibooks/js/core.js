@@ -169,6 +169,8 @@ function updatePriceForm(bookID)
 	
 	var newInput = document.createElement('input');
 	newInput.setAttribute("value",priceCell.innerHTML.replace("€ ",""))
+	newInput.className = "form-control";
+	newInput.style.textAlign = "center";
 	priceCell.parentNode.insertBefore(newInput, priceCell);
 	priceCell.parentNode.removeChild(priceCell);
 }
