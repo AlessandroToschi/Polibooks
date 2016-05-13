@@ -10,7 +10,7 @@ $config['callback'] = "http://localhost/polibooks/auth.php";
 $config['db_host'] = "127.0.0.1";
 $config['db_user'] = "aleto";
 $config['db_pass'] = "toscolino";
-$config['db_name'] = "polibooks";
+$config['db_name'] = "Polibooks";
 
 $config['website'] = "^http://localhost\\/polibooks\\/";
 
